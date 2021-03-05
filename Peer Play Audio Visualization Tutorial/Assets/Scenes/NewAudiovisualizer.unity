@@ -9790,6 +9790,7 @@ GameObject:
   - component: {fileID: 804409400}
   - component: {fileID: 804409399}
   - component: {fileID: 804409398}
+  - component: {fileID: 804409401}
   m_Layer: 0
   m_Name: AudioPeer
   m_TagString: Untagged
@@ -9818,8 +9819,8 @@ AudioSource:
   m_GameObject: {fileID: 804409397}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 4191c3350fda7394d8f8c50604f6f452, type: 3}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 45e413ba43e5dd84cbc950b62a2bd7a5, type: 2}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -9919,6 +9920,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &804409401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 804409397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4833d69052b8d4147ae17ce9cdfbc3f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  frequency: 0
+  audioSampleRate: 44100
+  microphone: 
+  fftWindow: 0
 --- !u!1 &868756291
 GameObject:
   m_ObjectHideFlags: 0

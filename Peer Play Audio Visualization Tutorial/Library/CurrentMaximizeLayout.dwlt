@@ -23,10 +23,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 957
-  m_MinSize: {x: 909, y: 421}
+  m_MinSize: {x: 909, y: 442}
   m_MaxSize: {x: 22004, y: 14021}
   vertical: 0
-  controlID: 57474
+  controlID: 1166
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_MinSize: {x: 230, y: 371}
   m_MaxSize: {x: 10000, y: 14021}
   vertical: 1
-  controlID: 57440
+  controlID: 1111
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -205,21 +205,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/_Scripts
+    - Assets/_Audio
     m_Globs: []
   m_ViewMode: 0
   m_StartGridSize: 64
   m_LastFolders: []
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: E:\Toolbars\PROJECTS\Game Projects\Unity\Peer Play Audio Visualization
-    Tutorial
+  m_LastProjectPath: C:\Users\Devzo\OneDrive\Documents\Unity-Audiovisualizer\Peer
+    Play Audio Visualization Tutorial
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: a4300000
     m_LastClickedID: 12452
-    m_ExpandedIDs: ffffffff00000000e63700000238000004380000
+    m_ExpandedIDs: ffffffff000000008037000098370000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -245,9 +245,9 @@ MonoBehaviour:
       m_ResourceFile: 
   m_AssetTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 50430000
+    m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: ffffffff00000000e63700000238000004380000
+    m_ExpandedIDs: ffffffff000000008037000098370000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -272,8 +272,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 50430000
-    m_LastClickedInstanceID: 17232
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: 00000000
     m_RenameOverlay:
@@ -410,21 +410,21 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 7890ffff76efffffd4efffffdcf7ffff26f8ffff00faffff40fbffff
+      m_ExpandedIDs: 42f9ffff66f9ffff0efaffff40fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: Particle Systems
-        m_OriginalName: Particle Systems
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: -28552
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 8}
       m_SearchString: 
@@ -455,10 +455,10 @@ MonoBehaviour:
     y: 0
     width: 497
     height: 957
-  m_MinSize: {x: 202, y: 421}
-  m_MaxSize: {x: 4002, y: 8021}
+  m_MinSize: {x: 202, y: 442}
+  m_MaxSize: {x: 4002, y: 8042}
   vertical: 1
-  controlID: 57475
+  controlID: 1146
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -620,8 +620,8 @@ MonoBehaviour:
     y: 491
     width: 497
     height: 466
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 2}
   m_Panes:
   - {fileID: 2}
@@ -685,7 +685,7 @@ MonoBehaviour:
     m_CachedPref: -160
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
-  m_LastInspectedObjectInstanceID: 17232
+  m_LastInspectedObjectInstanceID: -1
   m_LastVerticalScrollValue: 0
   m_AssetGUID: 
   m_InstanceID: 0
