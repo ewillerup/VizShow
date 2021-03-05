@@ -569,5 +569,4 @@ ScriptsOnlyBuild:
   platform: 5
   scenePathNames:
   - Assets/Scenes/NewAudiovisualizer.unity
-  playerPath: E:/Toolbars/PROJECTS/Game Projects/Unity/Peer Play Audio Visualization
-    Tutorial/Builds/Peer Play Audio Visualization Tutorial.exe
+  playerPath: C:/Users/Devzo/OneDrive/Documents/Unity-Audiovisualizer/Audiovisualizer/Builds/Audiovisualizer.exe
