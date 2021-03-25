@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MicrophoneAudio : MonoBehaviour
 {
+    public static float MicLoudness;
+    
     public int chosenDevice;
     public float frequency;
     public string microphone;

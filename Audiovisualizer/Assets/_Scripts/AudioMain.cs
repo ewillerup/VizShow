@@ -16,6 +16,7 @@ public class AudioMain : MonoBehaviour
     public static float[] _audioBandBuffer = new float[8];
 
     public static float _amplitude, _amplitudeBuffer;
+    public static bool _micIsSilent;
     float _amplitudeHighest;
 
     // Start is called before the first frame update
@@ -32,6 +33,7 @@ public class AudioMain : MonoBehaviour
         BandBuffer();
         CreateAudioBands();
         GetAmplitude();
+
     }
 
     void GetAmplitude()
@@ -64,7 +66,16 @@ public class AudioMain : MonoBehaviour
             }
 
             _audioBand[i] = (_freqBand[i] / _freqBandHighest[i]);
-            _audioBandBuffer[i] = (_bandBuffer[i] / _freqBandHighest[i]);
+
+            if (_micIsSilent)
+            {
+                _audioBandBuffer[i] = 0;
+            }
+
+            else
+            {
+                _audioBandBuffer[i] = (_bandBuffer[i] / _freqBandHighest[i]);
+            }
         }
     }
 

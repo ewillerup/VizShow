@@ -4,7 +4,6 @@ ScriptsOnlyBuild:
     - AVParticle
     - AudioMain
     - InputDevicePicker
-    - MicrophoneAudio
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     UnityEditor.TestRunner.dll:
@@ -24,7 +23,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Text
     - UnityEngine.UI.Toggle
   sceneClasses:
-    Assets/Scenes/NewAudiovisualizer.unity:
+    Assets/Scenes/AVExample.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -41,14 +40,12 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 82
       Script: {instanceID: 0}
-    - Class: 89
+    - Class: 83
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
       Script: {instanceID: 11796}
-    - Class: 114
-      Script: {instanceID: 11866}
     - Class: 114
       Script: {instanceID: 11976}
     - Class: 114
@@ -94,14 +91,6 @@ ScriptsOnlyBuild:
     - Class: 223
       Script: {instanceID: 0}
     - Class: 224
-      Script: {instanceID: 0}
-    - Class: 241
-      Script: {instanceID: 0}
-    - Class: 243
-      Script: {instanceID: 0}
-    - Class: 245
-      Script: {instanceID: 0}
-    - Class: 258
       Script: {instanceID: 0}
   scriptHashData:
   - hash:
@@ -568,5 +557,5 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   platform: 5
   scenePathNames:
-  - Assets/Scenes/NewAudiovisualizer.unity
-  playerPath: C:/Users/Devzo/OneDrive/Documents/Unity-Audiovisualizer/Audiovisualizer/Builds/Audiovisualizer.exe
+  - Assets/Scenes/AVExample.unity
+  playerPath: C:/Users/Devzo/OneDrive/Documents/Unity-Audiovisualizer/Audiovisualizer/Builds/Audiovisualizer_Example.exe

@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/NewAudiovisualizer.unity
+- path: Assets/Scenes/AVExample.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
