@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MicrophoneAudio : MonoBehaviour
 {
@@ -10,11 +11,12 @@ public class MicrophoneAudio : MonoBehaviour
     public float frequency;
     public string microphone;
     public FFTWindow fftWindow;
+    public List<string> options = new List<string>();
+    public GameObject inputDevicePicker;
 
     private int count;
     private bool inputDeviceExists = false;
     private AudioSource audioSource;
-    private List<string> options = new List<string>();
 
     private void Start()
     {
@@ -47,8 +49,13 @@ public class MicrophoneAudio : MonoBehaviour
         }
     }
 
-    void UpdateMicrophone()
+    public void UpdateMicrophone()
     {
+        if (inputDevicePicker.GetComponent<InputDevicePicker>().inputDeviceList.Count > 0)
+        {
+            microphone = inputDevicePicker.GetComponent<Dropdown>().options[inputDevicePicker.GetComponent<Dropdown>().value].text;
+        }
+
         if (inputDeviceExists)
         {
             audioSource.Stop();
