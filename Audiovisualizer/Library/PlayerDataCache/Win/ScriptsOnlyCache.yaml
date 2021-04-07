@@ -3,7 +3,6 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - AVParticle
     - AudioMain
-    - InputDevicePicker
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     UnityEditor.TestRunner.dll:
@@ -13,15 +12,6 @@ ScriptsOnlyBuild:
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
-    - UnityEngine.UI.CanvasScaler
-    - UnityEngine.UI.Dropdown
-    - UnityEngine.UI.GraphicRaycaster
-    - UnityEngine.UI.Image
-    - UnityEngine.UI.Mask
-    - UnityEngine.UI.ScrollRect
-    - UnityEngine.UI.Scrollbar
-    - UnityEngine.UI.Text
-    - UnityEngine.UI.Toggle
   sceneClasses:
     Assets/Scenes/AVExample.unity:
     - Class: 1
@@ -45,36 +35,14 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11796}
-    - Class: 114
-      Script: {instanceID: 11976}
-    - Class: 114
-      Script: {instanceID: 11978}
-    - Class: 114
-      Script: {instanceID: 12016}
-    - Class: 114
-      Script: {instanceID: 12352}
-    - Class: 114
       Script: {instanceID: 12450}
-    - Class: 114
-      Script: {instanceID: 12676}
     - Class: 114
       Script: {instanceID: 13394}
     - Class: 114
-      Script: {instanceID: 13440}
-    - Class: 114
-      Script: {instanceID: 13450}
-    - Class: 114
       Script: {instanceID: 13762}
     - Class: 114
-      Script: {instanceID: 13822}
-    - Class: 114
       Script: {instanceID: 13836}
-    - Class: 114
-      Script: {instanceID: 13854}
     - Class: 115
-      Script: {instanceID: 0}
-    - Class: 128
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
@@ -83,14 +51,6 @@ ScriptsOnlyBuild:
     - Class: 198
       Script: {instanceID: 0}
     - Class: 199
-      Script: {instanceID: 0}
-    - Class: 213
-      Script: {instanceID: 0}
-    - Class: 222
-      Script: {instanceID: 0}
-    - Class: 223
-      Script: {instanceID: 0}
-    - Class: 224
       Script: {instanceID: 0}
   scriptHashData:
   - hash:
@@ -119,7 +79,7 @@ ScriptsOnlyBuild:
     className: TMP_Dropdown
   - hash:
       serializedVersion: 2
-      Hash: 98e2e5c088fc9713975497572a994cb0
+      Hash: c41c7f3e4320bd51a15c44c651f03853
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MicrophoneAudio
@@ -419,7 +379,7 @@ ScriptsOnlyBuild:
     className: AudioTrack
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: baa3a9cb87a3170d5b39e327399d4485
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: InputDevicePicker
@@ -558,4 +518,4 @@ ScriptsOnlyBuild:
   platform: 5
   scenePathNames:
   - Assets/Scenes/AVExample.unity
-  playerPath: C:/Users/Devzo/OneDrive/Documents/Unity-Audiovisualizer/Audiovisualizer/Builds/Audiovisualizer_Example.exe
+  playerPath: C:/Users/Devzo/OneDrive/Documents/Unity-Audiovisualizer/Audiovisualizer/Builds/AVExample.exe
