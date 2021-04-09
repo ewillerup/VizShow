@@ -7,8 +7,7 @@ public class InputDevicePicker : MonoBehaviour
 {
     public GameObject audioGO;
     public List<string> inputDeviceList;
-
-    private bool devicesAdded = false;
+    public bool devicesAdded = false;
 
     private void Update()
     {

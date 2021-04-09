@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class MicrophoneAudio : MonoBehaviour
 {
+    public GameObject ui;
     public static float MicLoudness;
     
     public int chosenDevice;
@@ -14,12 +15,14 @@ public class MicrophoneAudio : MonoBehaviour
     public List<string> options = new List<string>();
     public GameObject inputDevicePicker;
 
-    private int count;
+    int count;
     private bool inputDeviceExists = false;
     private AudioSource audioSource;
 
     private void Start()
     {
+        ui.SetActive(false);
+
         audioSource = GetComponent<AudioSource>();
 
         if (Microphone.devices.Length > 0)
@@ -51,7 +54,7 @@ public class MicrophoneAudio : MonoBehaviour
 
     public void UpdateMicrophone()
     {
-        if (inputDevicePicker.GetComponent<InputDevicePicker>().inputDeviceList.Count > 0)
+        if (inputDevicePicker.GetComponent<InputDevicePicker>().inputDeviceList.Count > 0 && inputDevicePicker.GetComponent<Dropdown>().options.Count > 0)
         {
             microphone = inputDevicePicker.GetComponent<Dropdown>().options[inputDevicePicker.GetComponent<Dropdown>().value].text;
         }
@@ -79,5 +82,55 @@ public class MicrophoneAudio : MonoBehaviour
                 Debug.Log(microphone + " is not recording properly.");
             }
         }
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (!ui.activeInHierarchy)
+            {
+                ui.SetActive(true);
+            }
+
+            else
+            {
+                ui.SetActive(false);
+            }
+        }
+    }
+
+    public void RefreshDeviceList()
+    {
+        Debug.Log("Device list refreshed.");
+        options.Clear();
+        count = 0;
+
+        if (Microphone.devices.Length > 0)
+        {
+            foreach (string device in Microphone.devices)
+            {
+                if (microphone == null)
+                {
+                    microphone = device;
+                }
+
+                count++;
+
+                options.Add(device);
+            }
+
+            Debug.Log(count + " input device(s) detected.");
+        }
+
+        else
+        {
+            Debug.Log("There is no input device detected.");
+            inputDeviceExists = false;
+        }
+
+        inputDevicePicker.GetComponent<InputDevicePicker>().devicesAdded = false;
+        inputDevicePicker.GetComponent<Dropdown>().options.Clear();
+        UpdateMicrophone();
     }
 }
