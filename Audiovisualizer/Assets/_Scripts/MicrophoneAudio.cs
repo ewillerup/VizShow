@@ -98,6 +98,15 @@ public class MicrophoneAudio : MonoBehaviour
                 ui.SetActive(false);
             }
         }
+
+        if (inputDeviceExists && ui.activeInHierarchy && inputDevicePicker.GetComponent<InputDevicePicker>().inputDeviceList.Count > 0 && inputDevicePicker.GetComponent<Dropdown>().options.Count > 0)
+        {
+            if (inputDevicePicker.GetComponent<Dropdown>().options[inputDevicePicker.GetComponent<Dropdown>().value].text != microphone)
+            {
+                microphone = inputDevicePicker.GetComponent<Dropdown>().options[inputDevicePicker.GetComponent<Dropdown>().value].text;
+                UpdateMicrophone();
+            }
+        }
     }
 
     public void RefreshDeviceList()
@@ -121,6 +130,10 @@ public class MicrophoneAudio : MonoBehaviour
             }
 
             Debug.Log(count + " input device(s) detected.");
+
+            inputDevicePicker.GetComponent<InputDevicePicker>().devicesAdded = false;
+            inputDevicePicker.GetComponent<Dropdown>().options.Clear();
+            UpdateMicrophone();
         }
 
         else
@@ -128,9 +141,5 @@ public class MicrophoneAudio : MonoBehaviour
             Debug.Log("There is no input device detected.");
             inputDeviceExists = false;
         }
-
-        inputDevicePicker.GetComponent<InputDevicePicker>().devicesAdded = false;
-        inputDevicePicker.GetComponent<Dropdown>().options.Clear();
-        UpdateMicrophone();
     }
 }
