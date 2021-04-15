@@ -22,8 +22,6 @@ public class MicrophoneAudio : MonoBehaviour
 
     private void Start()
     {
-        ui.SetActive(false);
-
         audioSource = GetComponent<AudioSource>();
 
         if (Microphone.devices.Length > 0)

@@ -148,4 +148,9 @@ public class AudioMain : MonoBehaviour
             _freqBand[i] = average * 10;
         }
     }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }

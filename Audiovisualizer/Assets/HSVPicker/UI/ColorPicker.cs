@@ -3,6 +3,7 @@ namespace HSVPicker
 {
     public class ColorPicker : MonoBehaviour
     {
+        public BoxSlider boxSlider;
 
         private float _hue = 0;
         private float _saturation = 0;
@@ -39,7 +40,9 @@ namespace HSVPicker
 
         private void Start()
         {
-            Setup.AlphaSlidiers.Toggle(Setup.ShowAlpha);
+
+            // Commenting this out so that the Alpha slider does not appear ~Devon
+            // Setup.AlphaSlidiers.Toggle(Setup.ShowAlpha);
             Setup.ColorToggleElement.Toggle(Setup.ShowColorSliderToggle);
             Setup.RgbSliders.Toggle(Setup.ShowRgb);
             Setup.HsvSliders.Toggle(Setup.ShowHsv);
