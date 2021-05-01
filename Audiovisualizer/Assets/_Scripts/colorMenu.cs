@@ -14,13 +14,14 @@ public class colorMenu : MonoBehaviour
     public ParticleSystem square_1;
     public ParticleSystem square_2;
     public ParticleSystem square_3;
-    private ParticleSystem particleToEdit;
-    private ColorPicker colorPicker;
+    public ParticleSystem particleToEdit;
+    public ColorPicker colorPicker;
 
     private void Start()
     {
         colorPicker = FindObjectOfType<ColorPicker>();
         colorPicker.CurrentColor = swirl_1.main.startColor.color;
+        particleToEdit = swirl_1;
     }
 
     public void OnDropdownChanged(int index)
