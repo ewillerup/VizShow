@@ -947,7 +947,7 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: 9e2982aaf0e607b2dcea7457b37bbe91
+      Hash: d0a414d8ae16cd0ef4d8b3dfb903791c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PrefsManager

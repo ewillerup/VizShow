@@ -7,7 +7,7 @@ public class PrefsManager : MonoBehaviour
 {
     public ParticleSystem[] systems;
 
-    public GameObject colorPicker;
+    public GameObject colorMenu;
     public GameObject deletePresetButton;
     public GameObject saveCurrentPresetButton;
 
@@ -17,23 +17,23 @@ public class PrefsManager : MonoBehaviour
     public List<Color> systemColors;
     public List<string> colorPresetOptions;
 
-    private int numColorPresets;
+    public Material swirl1;
+    public Material swirl2;
+    public Material swirl3;
+    public Material swirl4;
+    public Material swirl5;
+    public Material square1;
+    public Material square2;
+    public Material square3;
+    public Material square4;
+    public Material square5;
+    public Material curve1;
+    public Material curve2;
+    public Material curve3;
+    public Material curve4;
+    public Material curve5;
 
-    Material swirl1;
-    Material swirl2;
-    Material swirl3;
-    Material swirl4;
-    Material swirl5;
-    Material square1;
-    Material square2;
-    Material square3;
-    Material square4;
-    Material square5;
-    Material curve1;
-    Material curve2;
-    Material curve3;
-    Material curve4;
-    Material curve5;
+    private int numColorPresets;
 
     // Start is called before the first frame update
     void Start()
@@ -56,7 +56,15 @@ public class PrefsManager : MonoBehaviour
 
         colorPresetOptions.Add("Default");
 
-        AddColorPresetOptions();
+        if (PlayerPrefs.GetInt("Number of Presets") > 1)
+        {
+            for (int i = 0; i < PlayerPrefs.GetInt("Number of Presets") - 1; i++)
+            {
+                colorPresetOptions.Add("Preset " + (i + 1));
+            }
+        }
+
+        presetPicker.AddOptions(colorPresetOptions);
 
         foreach (ParticleSystem system in systems)
         {
@@ -125,6 +133,60 @@ public class PrefsManager : MonoBehaviour
             deletePresetButton.SetActive(true);
             saveCurrentPresetButton.SetActive(true);
         }
+
+        if (Input.GetKeyDown(KeyCode.Alpha0))
+        {
+            presetPicker.value = 0;
+            ResetToDefault();
+        }
+
+        if (presetPicker.options.Count >= 2 && Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            presetPicker.value = 1;
+            ResetToDefault();
+        }
+
+        if (presetPicker.options.Count >= 3 && Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            presetPicker.value = 2;
+            ResetToDefault();
+        }
+
+        if (presetPicker.options.Count >= 4 && Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            presetPicker.value = 3;
+            ResetToDefault();
+        }
+
+        if (presetPicker.options.Count >= 5 && Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            presetPicker.value = 4;
+            ResetToDefault();
+        }
+
+        if (presetPicker.options.Count >= 6 && Input.GetKeyDown(KeyCode.Alpha5))
+        {
+            presetPicker.value = 5;
+            ResetToDefault();
+        }
+
+        if (presetPicker.options.Count >= 7 && Input.GetKeyDown(KeyCode.Alpha6))
+        {
+            presetPicker.value = 6;
+            ResetToDefault();
+        }
+
+        if (presetPicker.options.Count >= 8 && Input.GetKeyDown(KeyCode.Alpha7))
+        {
+            presetPicker.value = 7;
+            ResetToDefault();
+        }
+
+        if (presetPicker.options.Count >= 9 && Input.GetKeyDown(KeyCode.Alpha8))
+        {
+            presetPicker.value = 8;
+            ResetToDefault();
+        }
     }
 
     public void LoadPrefs()
@@ -147,44 +209,44 @@ public class PrefsManager : MonoBehaviour
         ChangeColor(color7, systems[6]);
         ChangeColor(color8, systems[7]);
 
-        if (colorPicker.GetComponent<colorMenu>().particleToEdit == colorPicker.GetComponent<colorMenu>().swirl_1)
+        if (colorMenu.GetComponent<colorMenu>().particleToEdit == colorMenu.GetComponent<colorMenu>().swirl_1)
         {
-            colorPicker.GetComponent<colorMenu>().colorPicker.CurrentColor = systems[0].main.startColor.color;
+            colorMenu.GetComponent<colorMenu>().colorPicker.CurrentColor = systems[0].main.startColor.color;
         }
 
-        else if (colorPicker.GetComponent<colorMenu>().particleToEdit == colorPicker.GetComponent<colorMenu>().swirl_2)
+        else if (colorMenu.GetComponent<colorMenu>().particleToEdit == colorMenu.GetComponent<colorMenu>().swirl_2)
         {
-            colorPicker.GetComponent<colorMenu>().colorPicker.CurrentColor = systems[1].main.startColor.color;
+            colorMenu.GetComponent<colorMenu>().colorPicker.CurrentColor = systems[1].main.startColor.color;
         }
 
-        else if (colorPicker.GetComponent<colorMenu>().particleToEdit == colorPicker.GetComponent<colorMenu>().swirl_3)
+        else if (colorMenu.GetComponent<colorMenu>().particleToEdit == colorMenu.GetComponent<colorMenu>().swirl_3)
         {
-            colorPicker.GetComponent<colorMenu>().colorPicker.CurrentColor = systems[2].main.startColor.color;
+            colorMenu.GetComponent<colorMenu>().colorPicker.CurrentColor = systems[2].main.startColor.color;
         }
 
-        else if (colorPicker.GetComponent<colorMenu>().particleToEdit == colorPicker.GetComponent<colorMenu>().swirl_4)
+        else if (colorMenu.GetComponent<colorMenu>().particleToEdit == colorMenu.GetComponent<colorMenu>().swirl_4)
         {
-            colorPicker.GetComponent<colorMenu>().colorPicker.CurrentColor = systems[3].main.startColor.color;
+            colorMenu.GetComponent<colorMenu>().colorPicker.CurrentColor = systems[3].main.startColor.color;
         }
 
-        else if (colorPicker.GetComponent<colorMenu>().particleToEdit == colorPicker.GetComponent<colorMenu>().swirl_5)
+        else if (colorMenu.GetComponent<colorMenu>().particleToEdit == colorMenu.GetComponent<colorMenu>().swirl_5)
         {
-            colorPicker.GetComponent<colorMenu>().colorPicker.CurrentColor = systems[4].main.startColor.color;
+            colorMenu.GetComponent<colorMenu>().colorPicker.CurrentColor = systems[4].main.startColor.color;
         }
 
-        else if (colorPicker.GetComponent<colorMenu>().particleToEdit == colorPicker.GetComponent<colorMenu>().square_1)
+        else if (colorMenu.GetComponent<colorMenu>().particleToEdit == colorMenu.GetComponent<colorMenu>().square_1)
         {
-            colorPicker.GetComponent<colorMenu>().colorPicker.CurrentColor = systems[5].main.startColor.color;
+            colorMenu.GetComponent<colorMenu>().colorPicker.CurrentColor = systems[5].main.startColor.color;
         }
 
-        else if (colorPicker.GetComponent<colorMenu>().particleToEdit == colorPicker.GetComponent<colorMenu>().square_2)
+        else if (colorMenu.GetComponent<colorMenu>().particleToEdit == colorMenu.GetComponent<colorMenu>().square_2)
         {
-            colorPicker.GetComponent<colorMenu>().colorPicker.CurrentColor = systems[6].main.startColor.color;
+            colorMenu.GetComponent<colorMenu>().colorPicker.CurrentColor = systems[6].main.startColor.color;
         }
 
-        else if (colorPicker.GetComponent<colorMenu>().particleToEdit == colorPicker.GetComponent<colorMenu>().square_3)
+        else if (colorMenu.GetComponent<colorMenu>().particleToEdit == colorMenu.GetComponent<colorMenu>().square_3)
         {
-            colorPicker.GetComponent<colorMenu>().colorPicker.CurrentColor = systems[7].main.startColor.color;
+            colorMenu.GetComponent<colorMenu>().colorPicker.CurrentColor = systems[7].main.startColor.color;
         }
 
         for (int i = 0; i < systems.Length; i++)
@@ -317,8 +379,6 @@ public class PrefsManager : MonoBehaviour
         {
             PlayerPrefs.SetInt("Preset " + numColorPresets + ": Shape " + (i + 1), shapePickers[i].value);
         }
-
-        colorPresetOptions.Add("Preset " + numColorPresets);
         
         AddColorPresetOptions();
     }
@@ -411,8 +471,97 @@ public class PrefsManager : MonoBehaviour
             PlayerPrefs.DeleteKey("Preset " + presetPicker.value + ": Shape " + (i + 1));
         }
 
+        PlayerPrefs.SetInt("Number of Presets", PlayerPrefs.GetInt("Number of Presets") - 1);
+
+        for (int i = 0; i < colorPresetOptions.Count; i++)
+        {
+            if (i == 0) { }
+
+            else
+            {
+                colorPresetOptions[i] = "Preset " + i;
+            }
+        }
+
+        for (int i = 0; i < presetPicker.options.Count; i++)
+        {
+            if (i > presetPicker.value)
+            {
+                PlayerPrefs.SetFloat("Preset " + (i - 1) + ": Color 1 (Red)", PlayerPrefs.GetFloat("Preset " + i + ": Color 1 (Red)"));
+                PlayerPrefs.SetFloat("Preset " + (i - 1) + ": Color 1 (Green)", PlayerPrefs.GetFloat("Preset " + i + ": Color 1 (Green)"));
+                PlayerPrefs.SetFloat("Preset " + (i - 1) + ": Color 1 (Blue)", PlayerPrefs.GetFloat("Preset " + i + ": Color 1 (Blue)"));
+
+                PlayerPrefs.SetFloat("Preset " + (i - 1) + ": Color 2 (Red)", PlayerPrefs.GetFloat("Preset " + i + ": Color 2 (Red)"));
+                PlayerPrefs.SetFloat("Preset " + (i - 1) + ": Color 2 (Green)", PlayerPrefs.GetFloat("Preset " + i + ": Color 2 (Green)"));
+                PlayerPrefs.SetFloat("Preset " + (i - 1) + ": Color 2 (Blue)", PlayerPrefs.GetFloat("Preset " + i + ": Color 2 (Blue)"));
+
+                PlayerPrefs.SetFloat("Preset " + (i - 1) + ": Color 3 (Red)", PlayerPrefs.GetFloat("Preset " + i + ": Color 3 (Red)"));
+                PlayerPrefs.SetFloat("Preset " + (i - 1) + ": Color 3 (Green)", PlayerPrefs.GetFloat("Preset " + i + ": Color 3 (Green)"));
+                PlayerPrefs.SetFloat("Preset " + (i - 1) + ": Color 3 (Blue)", PlayerPrefs.GetFloat("Preset " + i + ": Color 3 (Blue)"));
+
+                PlayerPrefs.SetFloat("Preset " + (i - 1) + ": Color 4 (Red)", PlayerPrefs.GetFloat("Preset " + i + ": Color 4 (Red)"));
+                PlayerPrefs.SetFloat("Preset " + (i - 1) + ": Color 4 (Green)", PlayerPrefs.GetFloat("Preset " + i + ": Color 4 (Green)"));
+                PlayerPrefs.SetFloat("Preset " + (i - 1) + ": Color 4 (Blue)", PlayerPrefs.GetFloat("Preset " + i + ": Color 4 (Blue)"));
+
+                PlayerPrefs.SetFloat("Preset " + (i - 1) + ": Color 5 (Red)", PlayerPrefs.GetFloat("Preset " + i + ": Color 5 (Red)"));
+                PlayerPrefs.SetFloat("Preset " + (i - 1) + ": Color 5 (Green)", PlayerPrefs.GetFloat("Preset " + i + ": Color 5 (Green)"));
+                PlayerPrefs.SetFloat("Preset " + (i - 1) + ": Color 5 (Blue)", PlayerPrefs.GetFloat("Preset " + i + ": Color 5 (Blue)"));
+
+                PlayerPrefs.SetFloat("Preset " + (i - 1) + ": Color 6 (Red)", PlayerPrefs.GetFloat("Preset " + i + ": Color 6 (Red)"));
+                PlayerPrefs.SetFloat("Preset " + (i - 1) + ": Color 6 (Green)", PlayerPrefs.GetFloat("Preset " + i + ": Color 6 (Green)"));
+                PlayerPrefs.SetFloat("Preset " + (i - 1) + ": Color 6 (Blue)", PlayerPrefs.GetFloat("Preset " + i + ": Color 6 (Blue)"));
+
+                PlayerPrefs.SetFloat("Preset " + (i - 1) + ": Color 7 (Red)", PlayerPrefs.GetFloat("Preset " + i + ": Color 7 (Red)"));
+                PlayerPrefs.SetFloat("Preset " + (i - 1) + ": Color 7 (Green)", PlayerPrefs.GetFloat("Preset " + i + ": Color 7 (Green)"));
+                PlayerPrefs.SetFloat("Preset " + (i - 1) + ": Color 7 (Blue)", PlayerPrefs.GetFloat("Preset " + i + ": Color 7 (Blue)"));
+
+                PlayerPrefs.SetFloat("Preset " + (i - 1) + ": Color 8 (Red)", PlayerPrefs.GetFloat("Preset " + i + ": Color 8 (Red)"));
+                PlayerPrefs.SetFloat("Preset " + (i - 1) + ": Color 8 (Green)", PlayerPrefs.GetFloat("Preset " + i + ": Color 8 (Green)"));
+                PlayerPrefs.SetFloat("Preset " + (i - 1) + ": Color 8 (Blue)", PlayerPrefs.GetFloat("Preset " + i + ": Color 8 (Blue)"));
+
+                PlayerPrefs.DeleteKey("Preset " + i + ": Color 1 (Red)");
+                PlayerPrefs.DeleteKey("Preset " + i + ": Color 1 (Green)");
+                PlayerPrefs.DeleteKey("Preset " + i + ": Color 1 (Blue)");
+
+                PlayerPrefs.DeleteKey("Preset " + i + ": Color 2 (Red)");
+                PlayerPrefs.DeleteKey("Preset " + i + ": Color 2 (Green)");
+                PlayerPrefs.DeleteKey("Preset " + i + ": Color 2 (Blue)");
+
+                PlayerPrefs.DeleteKey("Preset " + i + ": Color 3 (Red)");
+                PlayerPrefs.DeleteKey("Preset " + i + ": Color 3 (Green)");
+                PlayerPrefs.DeleteKey("Preset " + i + ": Color 3 (Blue)");
+
+                PlayerPrefs.DeleteKey("Preset " + i + ": Color 4 (Red)");
+                PlayerPrefs.DeleteKey("Preset " + i + ": Color 4 (Green)");
+                PlayerPrefs.DeleteKey("Preset " + i + ": Color 4 (Blue)");
+
+                PlayerPrefs.DeleteKey("Preset " + i + ": Color 5 (Red)");
+                PlayerPrefs.DeleteKey("Preset " + i + ": Color 5 (Green)");
+                PlayerPrefs.DeleteKey("Preset " + i + ": Color 5 (Blue)");
+
+                PlayerPrefs.DeleteKey("Preset " + i + ": Color 6 (Red)");
+                PlayerPrefs.DeleteKey("Preset " + i + ": Color 6 (Green)");
+                PlayerPrefs.DeleteKey("Preset " + i + ": Color 6 (Blue)");
+
+                PlayerPrefs.DeleteKey("Preset " + i + ": Color 7 (Red)");
+                PlayerPrefs.DeleteKey("Preset " + i + ": Color 7 (Green)");
+                PlayerPrefs.DeleteKey("Preset " + i + ": Color 7 (Blue)");
+
+                PlayerPrefs.DeleteKey("Preset " + i + ": Color 8 (Red)");
+                PlayerPrefs.DeleteKey("Preset " + i + ": Color 8 (Green)");
+                PlayerPrefs.DeleteKey("Preset " + i + ": Color 8 (Blue)");
+
+                for (int j = 0; j < systems.Length; j++)
+                {
+                    PlayerPrefs.SetInt("Preset " + (i - 1) + ": Shape " + (j + 1), PlayerPrefs.GetInt("Preset " + i + ": Shape " + (j + 1)));
+                    PlayerPrefs.DeleteKey("Preset " + i + ": Shape " + (j + 1));
+                }
+            }
+        }
+
         presetPicker.value = 0;
-        AddColorPresetOptions();
+        presetPicker.options.Clear();
+        presetPicker.AddOptions(colorPresetOptions);
     }
 
     public void ResetToDefault()
@@ -433,6 +582,20 @@ public class PrefsManager : MonoBehaviour
 
     private void AddColorPresetOptions()
     {
+        PlayerPrefs.SetInt("Number of Presets", PlayerPrefs.GetInt("Number of Presets") + 1);
+
+        if (PlayerPrefs.GetInt("Number of Presets") == 1)
+        {
+            colorPresetOptions.Add("Preset " + PlayerPrefs.GetInt("Number of Presets"));
+        }
+
+        else
+        {
+            colorPresetOptions.Add("Preset " + (PlayerPrefs.GetInt("Number of Presets") - 1));
+        }
+
+        PlayerPrefs.SetInt("Number of Presets", colorPresetOptions.Count);
+
         presetPicker.options.Clear();
         presetPicker.AddOptions(colorPresetOptions);
     }
