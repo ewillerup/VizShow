@@ -108,13 +108,14 @@ public class PrefsManager : MonoBehaviour
         systems[2].GetComponent<ParticleSystemRenderer>().material = swirl3;
         systems[3].GetComponent<ParticleSystemRenderer>().material = swirl4;
         systems[4].GetComponent<ParticleSystemRenderer>().material = swirl5;
-        systems[5].GetComponent<ParticleSystemRenderer>().material = square1;
-        systems[6].GetComponent<ParticleSystemRenderer>().material = square2;
-        systems[7].GetComponent<ParticleSystemRenderer>().material = square3;
+        systems[5].GetComponent<ParticleSystemRenderer>().material = curve1;
+        systems[6].GetComponent<ParticleSystemRenderer>().material = curve2;
+        systems[7].GetComponent<ParticleSystemRenderer>().material = curve3;
 
         for (int i = 0; i < systems.Length; i++)
         {
             PlayerPrefs.SetInt(colorPresetOptions[0] + ": Shape " + (i + 1), shapePickers[i].value);
+            Debug.Log(colorPresetOptions[0] + ": Shape " + (i + 1) + ": " + shapePickers[i].value);
         }
     }
 
@@ -279,51 +280,51 @@ public class PrefsManager : MonoBehaviour
                     systems[i].GetComponent<ParticleSystemRenderer>().material = curve2;
                     break;
 
-                case 3:
+                case 2:
                     systems[i].GetComponent<ParticleSystemRenderer>().material = curve3;
                     break;
 
-                case 4:
+                case 3:
                     systems[i].GetComponent<ParticleSystemRenderer>().material = curve4;
                     break;
 
-                case 5:
+                case 4:
                     systems[i].GetComponent<ParticleSystemRenderer>().material = curve5;
                     break;
 
-                case 6:
+                case 5:
                     systems[i].GetComponent<ParticleSystemRenderer>().material = square1;
                     break;
 
-                case 7:
+                case 6:
                     systems[i].GetComponent<ParticleSystemRenderer>().material = square2;
                     break;
 
-                case 8:
+                case 7:
                     systems[i].GetComponent<ParticleSystemRenderer>().material = square3;
                     break;
 
-                case 9:
+                case 8:
                     systems[i].GetComponent<ParticleSystemRenderer>().material = square4;
                     break;
 
-                case 10:
+                case 9:
                     systems[i].GetComponent<ParticleSystemRenderer>().material = square5;
                     break;
 
-                case 11:
+                case 10:
                     systems[i].GetComponent<ParticleSystemRenderer>().material = swirl1;
                     break;
 
-                case 12:
+                case 11:
                     systems[i].GetComponent<ParticleSystemRenderer>().material = swirl2;
                     break;
 
-                case 13:
+                case 12:
                     systems[i].GetComponent<ParticleSystemRenderer>().material = swirl3;
                     break;
 
-                case 14:
+                case 13:
                     systems[i].GetComponent<ParticleSystemRenderer>().material = swirl4;
                     break;
 
