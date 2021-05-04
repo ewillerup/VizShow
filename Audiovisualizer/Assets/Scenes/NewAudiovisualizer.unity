@@ -3713,7 +3713,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Square 3
+  m_Text: Curve 3
 --- !u!222 &527589298
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3792,7 +3792,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Square 2
+  m_Text: Curve 2
 --- !u!222 &537436176
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4230,7 +4230,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b5f931ba1473fe94787204fe67edc27a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ac239e3e6c157ad4d81a23ee64fb1513, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7178,7 +7178,7 @@ MonoBehaviour:
   m_CaptionImage: {fileID: 1146486675}
   m_ItemText: {fileID: 2055430293}
   m_ItemImage: {fileID: 1210209465}
-  m_Value: 7
+  m_Value: 2
   m_Options:
     m_Options:
     - m_Text: Curve 1
@@ -7956,6 +7956,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3082513562730359150, guid: c7518ffb143c3d4478dc83d8cb1594f7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 278135471a8fd604d85f002111feb805, type: 2}
+    - target: {fileID: 3082513563119971991, guid: c7518ffb143c3d4478dc83d8cb1594f7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1a97e57a2c056674eba3f7c79578f295, type: 2}
+    - target: {fileID: 3082513563211026326, guid: c7518ffb143c3d4478dc83d8cb1594f7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6067ff9158f004049b9121d39283d352, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7518ffb143c3d4478dc83d8cb1594f7, type: 3}
 --- !u!1 &981815542
@@ -8955,7 +8967,7 @@ MonoBehaviour:
   m_CaptionImage: {fileID: 587954567}
   m_ItemText: {fileID: 1183118180}
   m_ItemImage: {fileID: 301146557}
-  m_Value: 6
+  m_Value: 1
   m_Options:
     m_Options:
     - m_Text: Curve 1
@@ -9224,7 +9236,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 3c35ff9a7e05450499862d4e5ac5ab17, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b1b27cbc46967fd4fa7072444b02d5a7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9656,7 +9668,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Square 1
+  m_Text: Curve 1
 --- !u!222 &1195961247
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12885,7 +12897,7 @@ MonoBehaviour:
   m_CaptionImage: {fileID: 1734250251}
   m_ItemText: {fileID: 2042722164}
   m_ItemImage: {fileID: 1516934280}
-  m_Value: 5
+  m_Value: 0
   m_Options:
     m_Options:
     - m_Text: Curve 1
@@ -14526,7 +14538,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 072e7a9cf05d28c4480434af8dc7e5b1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 48152e88eb79a32439dc997f573b5c35, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
