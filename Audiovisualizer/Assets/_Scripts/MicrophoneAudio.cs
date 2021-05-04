@@ -90,11 +90,13 @@ public class MicrophoneAudio : MonoBehaviour
             if (!ui.activeInHierarchy)
             {
                 ui.SetActive(true);
+                Cursor.visible = true;
             }
 
             else
             {
                 ui.SetActive(false);
+                Cursor.visible = false;
             }
         }
 
