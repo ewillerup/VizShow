@@ -7,6 +7,7 @@ public class MicrophoneAudio : MonoBehaviour
 {
     public GameObject ui;
     public static float MicLoudness;
+    public bool debugLoudness;
     
     public int chosenDevice;
     public float frequency;
@@ -19,6 +20,7 @@ public class MicrophoneAudio : MonoBehaviour
     private int _sampleWindow = 128;
     private bool inputDeviceExists = false;
     private AudioSource audioSource;
+    private float inputGain;
 
     private void Start()
     {
@@ -110,7 +112,31 @@ public class MicrophoneAudio : MonoBehaviour
         }
 
         MicLoudness = LevelMax();
-        Debug.Log("Microphone Volume: " + MicLoudness);
+        if (debugLoudness) {
+            Debug.Log("Microphone Volume: " + MicLoudness);
+        }
+    }
+
+    //get data from microphone into audioclip
+    float LevelMax()
+    {
+        float levelMax = 0;
+        float[] waveData = new float[_sampleWindow];
+        int micPosition = Microphone.GetPosition(microphone) - (_sampleWindow + 1); // null means the first microphone
+        if (micPosition < 0) return 0;
+        audioSource.clip.GetData(waveData, micPosition);
+
+        // Getting a peak on the last 128 samples
+        for (int i = 0; i < _sampleWindow; i++)
+        {
+            float wavePeak = waveData[i] * waveData[i];
+            if (levelMax < wavePeak)
+            {
+                levelMax = wavePeak;
+            }
+        }
+        levelMax += inputGain;
+        return levelMax;
     }
 
     public void RefreshDeviceList()
@@ -145,25 +171,5 @@ public class MicrophoneAudio : MonoBehaviour
             Debug.Log("There is no input device detected.");
             inputDeviceExists = false;
         }
-    }
-
-    //get data from microphone into audioclip
-    float LevelMax()
-    {
-        float levelMax = 0;
-        float[] waveData = new float[_sampleWindow];
-        int micPosition = Microphone.GetPosition(microphone) - (_sampleWindow + 1); // null means the first microphone
-        if (micPosition < 0) return 0;
-        audioSource.clip.GetData(waveData, micPosition);
-        // Getting a peak on the last 128 samples
-        for (int i = 0; i < _sampleWindow; i++)
-        {
-            float wavePeak = waveData[i] * waveData[i];
-            if (levelMax < wavePeak)
-            {
-                levelMax = wavePeak;
-            }
-        }
-        return levelMax;
     }
 }
