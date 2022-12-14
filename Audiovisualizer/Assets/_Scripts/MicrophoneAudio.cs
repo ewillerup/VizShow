@@ -7,6 +7,8 @@ public class MicrophoneAudio : MonoBehaviour
 {
     public GameObject ui;
     public static float MicLoudness;
+    public float inputGain = 2;
+    public Slider gainSlider;
     public bool debugLoudness;
     
     public int chosenDevice;
@@ -20,7 +22,6 @@ public class MicrophoneAudio : MonoBehaviour
     private int _sampleWindow = 128;
     private bool inputDeviceExists = false;
     private AudioSource audioSource;
-    private float inputGain;
 
     private void Start()
     {
@@ -51,6 +52,10 @@ public class MicrophoneAudio : MonoBehaviour
             Debug.Log("There is no input device detected.");
             inputDeviceExists = false;
         }
+    }
+
+    public void SetGain(float gain) {
+        inputGain = gain;
     }
 
     public void UpdateMicrophone()
@@ -115,6 +120,8 @@ public class MicrophoneAudio : MonoBehaviour
         if (debugLoudness) {
             Debug.Log("Microphone Volume: " + MicLoudness);
         }
+
+        inputGain = gainSlider.value;
     }
 
     //get data from microphone into audioclip
@@ -135,7 +142,7 @@ public class MicrophoneAudio : MonoBehaviour
                 levelMax = wavePeak;
             }
         }
-        levelMax += inputGain;
+        levelMax *= inputGain;
         return levelMax;
     }
 
