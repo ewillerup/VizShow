@@ -27,7 +27,7 @@ public class AVParticle : MonoBehaviour
 
         else
         {
-            _main.startColor = new Color(_main.startColor.color.r, _main.startColor.color.g, _main.startColor.color.b, (AudioMain._audioBandBuffer[_band - 1] * (_maxAlpha - _minAlpha)) + _minAlpha);
+            _main.startColor = new Color(_main.startColor.color.r, _main.startColor.color.g, _main.startColor.color.b, (AudioMainOld._audioBandBuffer[_band - 1] * (_maxAlpha - _minAlpha)) + _minAlpha);
         }
     }
 }

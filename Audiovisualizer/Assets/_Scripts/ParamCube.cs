@@ -20,17 +20,17 @@ public class ParamCube : MonoBehaviour
     {
         if (_useBuffer)
         {
-            transform.localScale = new Vector3(transform.localScale.x, (AudioMain._bandBuffer[_band] * _scaleMultiplier) + _startScale, transform.localScale.z);
+            transform.localScale = new Vector3(transform.localScale.x, (AudioMainOld._bandBuffer[_band] * _scaleMultiplier) + _startScale, transform.localScale.z);
             // transform.localScale = new Vector3(transform.localScale.x, (AudioMain._audioBandBuffer[_band] * _maxScale) + _startScale, transform.localScale.z);
-            Color _color = new Color(AudioMain._audioBandBuffer[_band], AudioMain._audioBandBuffer[_band], AudioMain._audioBandBuffer[_band]);
+            Color _color = new Color(AudioMainOld._audioBandBuffer[_band], AudioMainOld._audioBandBuffer[_band], AudioMainOld._audioBandBuffer[_band]);
             _material.SetColor("_EmissionColor", _color);
         }
 
         if (!_useBuffer)
         {
-            transform.localScale = new Vector3(transform.localScale.x, (AudioMain._freqBand[_band] * _scaleMultiplier) + _startScale, transform.localScale.z);
+            transform.localScale = new Vector3(transform.localScale.x, (AudioMainOld._freqBand[_band] * _scaleMultiplier) + _startScale, transform.localScale.z);
             // transform.localScale = new Vector3(transform.localScale.x, (AudioMain._audioBand[_band] * _maxScale) + _startScale, transform.localScale.z);
-            Color _color = new Color(AudioMain._audioBand[_band], AudioMain._audioBand[_band], AudioMain._audioBand[_band]);
+            Color _color = new Color(AudioMainOld._audioBand[_band], AudioMainOld._audioBand[_band], AudioMainOld._audioBand[_band]);
             _material.SetColor("_EmissionColor", _color);
         }
     }

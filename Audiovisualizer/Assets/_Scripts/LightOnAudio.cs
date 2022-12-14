@@ -18,6 +18,6 @@ public class LightOnAudio : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _light.intensity = (AudioMain._audioBandBuffer[_band] * (_maxIntensity - _minIntensity)) + _minIntensity;
+        _light.intensity = (AudioMainOld._audioBandBuffer[_band] * (_maxIntensity - _minIntensity)) + _minIntensity;
     }
 }
