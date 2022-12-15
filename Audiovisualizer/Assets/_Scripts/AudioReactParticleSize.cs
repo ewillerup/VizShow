@@ -17,8 +17,8 @@ public class AudioReactParticleSize : MonoBehaviour
         sz.enabled = true;
 
         AnimationCurve curve = new AnimationCurve();
-        curve.AddKey(0.0f, AudioMain._bandBuffer[frequencyBand] * scaleGain + minSize);
-        curve.AddKey(0.1f, AudioMain._bandBuffer[frequencyBand] * scaleGain + minSize);
+        curve.AddKey(0.0f, AudioMain._bandBuffer64[frequencyBand] * scaleGain + minSize);
+        curve.AddKey(0.1f, AudioMain._bandBuffer64[frequencyBand] * scaleGain + minSize);
 
         sz.size = new ParticleSystem.MinMaxCurve(1.5f, curve);
     }

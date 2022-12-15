@@ -9,7 +9,7 @@ public class AudioMain : MonoBehaviour
     private static float[] _samplesLeft = new float[512];
     private static float[] _samplesRight = new float[512];
 
-    [HideInInspector]
+    // [HideInInspector]
     public static float[] _freqBand = new float[8];
     public static float[] _bandBuffer = new float[8];
     public static float[] _bufferDecrease = new float[8];
@@ -22,11 +22,8 @@ public class AudioMain : MonoBehaviour
     public static float[] _bufferDecrease64 = new float[64];
     public static float[] _freqBandHighest64 = new float[64];
 
-    [HideInInspector]
-    public static float[] _audioBand, _audioBandBuffer;
-
-    [HideInInspector]
-    public static float[] _audioBand64, _audioBandBuffer64;
+    public float[] _audioBand, _audioBandBuffer;
+    public float[] _audioBand64, _audioBandBuffer64;
 
     [HideInInspector]
     public static float _amplitude, _amplitudeBuffer;

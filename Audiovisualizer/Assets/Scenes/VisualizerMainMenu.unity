@@ -21072,8 +21072,8 @@ GameObject:
   m_Component:
   - component: {fileID: 804409400}
   - component: {fileID: 804409399}
-  - component: {fileID: 804409401}
   - component: {fileID: 804409398}
+  - component: {fileID: 804409401}
   m_Layer: 0
   m_Name: Audio
   m_TagString: Untagged
@@ -21093,6 +21093,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ad165cedaaf36345a0e54e1165eea4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _audioBand: []
+  _audioBandBuffer: []
+  _audioBand64: []
+  _audioBandBuffer64: []
   channel: 0
 --- !u!82 &804409399
 AudioSource:
@@ -21218,7 +21222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ui: {fileID: 1262656847}
-  inputGain: 2
+  inputGain: 4
   gainSlider: {fileID: 1767042505}
   debugLoudness: 0
   chosenDevice: 0
@@ -46263,8 +46267,8 @@ MonoBehaviour:
   myGradient:
     serializedVersion: 2
     key0: {r: 0.069499224, g: 0.063056245, b: 0.122641504, a: 1}
-    key1: {r: 0.06848523, g: 0.07586923, b: 0.1792453, a: 1}
-    key2: {r: 0.05339979, g: 0.13835713, b: 0.1509434, a: 0}
+    key1: {r: 0.31132078, g: 0.11307405, b: 0.1332447, a: 1}
+    key2: {r: 0.2830189, g: 0.08677466, b: 0.27124622, a: 0}
     key3: {r: 0.069499224, g: 0.063056245, b: 0.122641504, a: 0}
     key4: {r: 0.069499224, g: 0.063056245, b: 0.122641504, a: 0}
     key5: {r: 0, g: 0, b: 0, a: 0}
