@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MicrophoneAudio : MonoBehaviour
+public class AudioMicrophone : MonoBehaviour
 {
     public GameObject ui;
     public static float MicLoudness;
     public float inputGain = 2;
-    public Slider gainSlider;
     public bool debugLoudness;
     
     public int chosenDevice;
@@ -17,6 +16,7 @@ public class MicrophoneAudio : MonoBehaviour
     public FFTWindow fftWindow;
     public List<string> options = new List<string>();
     public GameObject inputDevicePicker;
+    public GameObject gainSlider;
 
     private int count;
     private int _sampleWindow = 128;
@@ -70,7 +70,7 @@ public class MicrophoneAudio : MonoBehaviour
             audioSource.Stop();
             audioSource.clip = Microphone.Start(microphone, true, 10, AudioSettings.outputSampleRate);
             audioSource.loop = true;
-            Debug.Log("Microphone is recording: " + Microphone.IsRecording(microphone).ToString());
+            // Debug.Log("Microphone is recording: " + Microphone.IsRecording(microphone).ToString());
 
             if (Microphone.IsRecording(microphone))
             {
@@ -121,7 +121,7 @@ public class MicrophoneAudio : MonoBehaviour
             Debug.Log("Microphone Volume: " + MicLoudness);
         }
 
-        inputGain = gainSlider.value;
+        inputGain = gainSlider.GetComponent<Slider>().value;
     }
 
     //get data from microphone into audioclip

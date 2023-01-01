@@ -11,9 +11,9 @@ public class InputDevicePicker : MonoBehaviour
 
     private void Update()
     {
-        if (audioGO.GetComponent<MicrophoneAudio>().options.Count > 0)
+        if (audioGO.GetComponent<AudioMicrophone>().options.Count > 0)
         {
-            inputDeviceList = audioGO.GetComponent<MicrophoneAudio>().options;
+            inputDeviceList = audioGO.GetComponent<AudioMicrophone>().options;
             
             if (!devicesAdded)
             {

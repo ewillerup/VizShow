@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/VisualizerMainMenu.unity
+- path: Assets/_Scenes/VisualizerPlayback.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

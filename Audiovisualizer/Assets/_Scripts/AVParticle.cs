@@ -20,7 +20,7 @@ public class AVParticle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (MicrophoneAudio.MicLoudness < 0.0001f)
+        if (AudioMicrophone.MicLoudness < 0.0001f)
         {
             _main.startColor = new Color(_main.startColor.color.r, _main.startColor.color.g, _main.startColor.color.b, 0);
         }
