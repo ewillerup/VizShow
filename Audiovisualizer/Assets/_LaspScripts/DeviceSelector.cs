@@ -79,8 +79,12 @@ sealed class DeviceSelector : MonoBehaviour
 
     public void OnDeviceSelected(int index)
     {
+
         // Retrieve the device ID from the dropdown item data.
         var id = ((DeviceItem)_deviceList.options[index]).id;
+
+        // BroadcastMessage("SetAudioDevice", id);
+        //     Debug.Log("darted and sta");
 
         //
         // Retrieve a descriptor of the selected device using the ID.
