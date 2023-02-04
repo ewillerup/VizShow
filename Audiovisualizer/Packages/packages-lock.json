@@ -1,5 +1,14 @@
 {
   "dependencies": {
+    "com.unity.burst": {
+      "version": "1.6.6",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.mathematics": "1.2.1"
+      },
+      "url": "https://packages.unity.com"
+    },
     "com.unity.collab-proxy": {
       "version": "1.17.2",
       "depth": 0,
@@ -37,6 +46,13 @@
     "com.unity.ide.vscode": {
       "version": "1.2.5",
       "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.mathematics": {
+      "version": "1.2.6",
+      "depth": 2,
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"
@@ -99,6 +115,23 @@
         "com.unity.modules.ui": "1.0.0",
         "com.unity.modules.imgui": "1.0.0"
       }
+    },
+    "jp.keijiro.lasp": {
+      "version": "2.1.6",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.burst": "1.4.4",
+        "jp.keijiro.libsoundio": "1.0.4"
+      },
+      "url": "https://registry.npmjs.com"
+    },
+    "jp.keijiro.libsoundio": {
+      "version": "1.0.4",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://registry.npmjs.com"
     },
     "com.unity.modules.ai": {
       "version": "1.0.0",
