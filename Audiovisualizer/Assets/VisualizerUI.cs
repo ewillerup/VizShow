@@ -11,6 +11,6 @@ public class VisualizerUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GetButtonDown("Cancel")) this.gameObject.SetActive(true);
+        if (Input.GetButtonDown("Cancel")) this.gameObject.SetActive(true);
     }
 }
